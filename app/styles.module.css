@@ -7,13 +7,20 @@
   justify-content: center;
 }
 .header {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 342px;
   height: 88px;
   background: #fafafa;
+  display: flex;            /* Makes it a flex container */
+  align-items: center;      /* Vertically center items */
+  justify-content: space-between;  /* Left, center, and right sections spread out */          /* Or whatever height you prefer */
+  padding: 0 16px; 
+  border-bottom: 1px solid #c4c4c4;
 }
 
 .content {
-  max-width: 375px;
+  width: 375px;
   height: 812px;
   height: 100%;
   border: 1px solid black;
@@ -55,13 +62,13 @@
 
 .date {
   color: #888;
-  font-size: 70%;
+  font-size: 11px;
   align-self: last baseline;
 }
 
 .words {
   margin: 15px;
-  font-size: 75%;
+  font-size: 13px;
 }
 
 .pic {
@@ -78,14 +85,79 @@
 .comments {
   margin-left: 50px;
   margin-right: 16px;
-  font-size: 75%;
+  font-size: 13px;
 }
 
 .withLine {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 15px;
   padding-bottom: 15px;
+  margin: 15px;
   border-bottom: 1px solid #c4c4c4;
+}
+
+
+.leftSection,
+.centerSection,
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+/* Style placeholders for icons/text as you wish */
+.backArrow {
+  margin-right: 8px; /* space from the left edge */
+  font-size: 18px;   /* example sizing if using a character arrow */
+}
+
+.centerSection .logo {
+  width: 24px;
+  height: 24px;
+  background-color: #ccc; /* placeholder look for a logo */
+  margin-right: 8px;
+  margin-left: 114px;
+  border-radius: 4px;     /* optional to soften corners */
+}
+
+.title {
+  color: #0078E8;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.07px;
+}
+
+.blog {
+  color: #262626;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.07px;
+  margin-left: 5px;
+}
+
+/* Right‐side icons spaced apart */
+.rightSection span {
+  width: 20px;
+  height: 20px;
+  margin-left: 1px;
+  align-items: flex-end;
+}
+
+.topLayer {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.bottomLayer {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
