@@ -1,3 +1,5 @@
+
+
 .main {
   width: 100%;
   height: 100%;
@@ -5,12 +7,89 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+}
+.header {
+  width: 100%;
+  height: 88px;
+  background: #FAFAFA;
 }
 
 .content {
-  max-width: 350px;
+  max-width: 375px;
+  height: 812px;
   height: 100%;
   border: 1px solid black;
+  font-style: poppins;
 }
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+
+
+}
+
+.picName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.name {
+  /* display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; */
+  font-weight: 500;
+  margin-left: 5px;
+  font-size: 85%;
+  align-self: center;
+}
+
+.avatar {
+  width: 22px;
+  height: 22px;
+  background-color: #ccc; 
+  border-radius: 50%;     
+  margin-right: 8px;    
+}
+
+.date {
+  color: #888;
+  font-size: 70%;
+  align-self: last baseline;
+}
+
+.words {
+  margin: 15px;
+  font-size: 75%;
+}
+
+.pic {
+  margin-left: 14px;
+  margin-right: 15px;
+  width: 346px;
+  height: 231px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: url("https://cdn.britannica.com/51/178051-050-3B786A55/San-Francisco.jpg") lightgray 50% / cover no-repeat; 
+}
+
+.comments {
+  margin-left: 50px;
+  margin-right: 16px;
+  font-size: 75%;
+}
+
+.withLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #C4C4C4;
+}
+
