@@ -12,10 +12,10 @@
   width: 342px;
   height: 88px;
   background: #fafafa;
-  display: flex;            /* Makes it a flex container */
-  align-items: center;      /* Vertically center items */
-  justify-content: space-between;  /* Left, center, and right sections spread out */          /* Or whatever height you prefer */
-  padding: 0 16px; 
+  display: flex; /* Makes it a flex container */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Left, center, and right sections spread out */ /* Or whatever height you prefer */
+  padding: 0 16px;
   border-bottom: 1px solid #c4c4c4;
 }
 
@@ -97,7 +97,6 @@
   border-bottom: 1px solid #c4c4c4;
 }
 
-
 .leftSection,
 .centerSection,
 .rightSection {
@@ -108,7 +107,7 @@
 /* Style placeholders for icons/text as you wish */
 .backArrow {
   margin-right: 8px; /* space from the left edge */
-  font-size: 18px;   /* example sizing if using a character arrow */
+  font-size: 18px; /* example sizing if using a character arrow */
 }
 
 .centerSection .logo {
@@ -117,11 +116,11 @@
   background-color: #ccc; /* placeholder look for a logo */
   margin-right: 8px;
   margin-left: 114px;
-  border-radius: 4px;     /* optional to soften corners */
+  border-radius: 4px; /* optional to soften corners */
 }
 
 .title {
-  color: #0078E8;
+  color: #0078e8;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
