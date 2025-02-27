@@ -1,19 +1,17 @@
 import { FiHeart as HeartIcon } from 'react-icons/fi';
 import { GoPaperAirplane as ShareIcon } from 'react-icons/go';
-import { LuCircle as ProfileIcon } from 'react-icons/lu';
+//import { LuCircle as ProfileIcon } from 'react-icons/lu';
 import styles from './styles.module.css';
 import '../assets/global.css';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.header}>
-        
-      </div>
+      <div className={styles.header}></div>
       <div className={styles.content}>
         <div className={styles.profile}>
           <div className={styles.picName}>
-            <div className={styles.avatar}/>
+            <div className={styles.avatar} />
             <span className={styles.name}>rbeggs</span>
           </div>
           <span className={styles.date}>September 19</span>
@@ -26,21 +24,20 @@ export default function Home() {
           2015, is dedicated to addressing both immediate needs and underlying
           causes of homelessness through a combination of shelter services, job
           training programs, and mental health support. Read more online:
-          https://   www.codetenderloin.org/
+          https:// www.codetenderloin.org/
         </div>
         <div className={styles.pic}></div>
-        <span className = {styles.withLine}>
+        <span className={styles.withLine}>
           <span className={styles.picName}>
-            <HeartIcon size={24}/>
+            <HeartIcon size={24} />
             <span className={styles.name}>256 Likes</span>
           </span>
           <ShareIcon size={24} />
         </span>
 
-
         <div className={styles.profile}>
           <div className={styles.picName}>
-            <div className={styles.avatar}/>
+            <div className={styles.avatar} />
             <span className={styles.name}>daviddd</span>
           </div>
           <span className={styles.date}>September 20</span>
@@ -52,13 +49,12 @@ export default function Home() {
 
         <div className={styles.profile}>
           <div className={styles.picName}>
-            <div className={styles.avatar}/>
+            <div className={styles.avatar} />
             <span className={styles.name}>vppraggie</span>
           </div>
           <span className={styles.date}>September 21</span>
         </div>
         <div className={styles.comments}>Thanks for sharing!</div>
-
       </div>
     </main>
   );
