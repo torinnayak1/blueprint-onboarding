@@ -10,6 +10,7 @@ export default function Home() {
       <div className={styles.content}>
         <div className={styles.header}>
           <div className={styles.topLayer}>
+            <div className={styles.time}>9:41</div>
             <div className={styles.rightSection}>
               <span>
                 <svg
