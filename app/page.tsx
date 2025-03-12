@@ -3,6 +3,74 @@ import { GoPaperAirplane as ShareIcon } from 'react-icons/go';
 //import { LuCircle as ProfileIcon } from 'react-icons/lu';
 import styles from './styles.module.css';
 import '../assets/global.css';
+import { supabase } from '@/supabase/client';
+
+export interface Post {
+  author: string;
+  date: Date;
+  image_url: string;
+  content: string;
+  likes: number;
+}
+
+export interface Comment {
+  author: string;
+  date: Date;
+  content: string;
+}
+
+const options: Intl.DateTimeFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+};
+
+function PostDisplay({ author, date, image_url, content, likes }: Post) {
+  return (
+    <div>
+      <div className={styles.profile}>
+        <div className={styles.picName}>
+          <div className={styles.avatar} />
+          <span className={styles.name}>{author}</span>
+        </div>
+        <span className={styles.date}>
+          {new Date(date).toLocaleDateString('en-US', options)}
+        </span>
+      </div>
+      <div className={styles.words}>{content}</div>
+      <img src={image_url} className={styles.pic} alt={''} />
+      <span className={styles.withLine}>
+        <span className={styles.picName}>
+          <HeartIcon size={24} />
+          <span className={styles.name}>{likes} Likes</span>
+        </span>
+        <ShareIcon size={24} />
+      </span>
+    </div>
+  );
+}
+
+function CommentDisplay({ author, date, content }: Comment) {
+  return (
+    <div>
+      <div className={styles.profile}>
+        <div className={styles.picName}>
+          <div className={styles.avatar} />
+          <span className={styles.name}>{author}</span>
+        </div>
+        <span className={styles.date}>
+          {new Date(date).toLocaleDateString('en-US', options)}
+        </span>
+      </div>
+      <div className={styles.comments}>{content}</div>
+    </div>
+  );
+}
+
+const { data: posts, error: postError } = await supabase.from('posts').select();
+const { data: comments, error: commentError } = await supabase
+  .from('comments')
+  .select();
 
 export default function Home() {
   return (
@@ -153,53 +221,39 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className={styles.profile}>
-          <div className={styles.picName}>
-            <div className={styles.avatar} />
-            <span className={styles.name}>rbeggs</span>
-          </div>
-          <span className={styles.date}>September 19</span>
-        </div>
-        <div className={styles.words}>
-          In response to the growing homelessness crisis in San Francisco, a
-          local nonprofit organization, Code Tenderloin, has launched a
-          comprehensive initiative aimed at providing long-term solutions for
-          individuals experiencing homelessness. The organization, founded in
-          2015, is dedicated to addressing both immediate needs and underlying
-          causes of homelessness through a combination of shelter services, job
-          training programs, and mental health support. Read more online:
-          https:// www.codetenderloin.org/
-        </div>
-        <div className={styles.pic}></div>
-        <span className={styles.withLine}>
-          <span className={styles.picName}>
-            <HeartIcon size={24} />
-            <span className={styles.name}>256 Likes</span>
-          </span>
-          <ShareIcon size={24} />
-        </span>
-
-        <div className={styles.profile}>
-          <div className={styles.picName}>
-            <div className={styles.avatar} />
-            <span className={styles.name}>daviddd</span>
-          </div>
-          <span className={styles.date}>September 20</span>
-        </div>
-        <div className={styles.comments}>
-          This organization is doing amazing work tackling the complex root
-          causes of the issue.
-        </div>
-
-        <div className={styles.profile}>
-          <div className={styles.picName}>
-            <div className={styles.avatar} />
-            <span className={styles.name}>vppraggie</span>
-          </div>
-          <span className={styles.date}>September 21</span>
-        </div>
-        <div className={styles.comments}>Thanks for sharing!</div>
+        {posts === null ? (
+          <div>{String(postError)}</div>
+        ) : (
+          posts.map(post => {
+            return (
+              <div key={post.id}>
+                <PostDisplay
+                  author={post.author}
+                  date={post.date}
+                  image_url={post.image_url}
+                  content={post.content}
+                  likes={post.likes}
+                />
+                {comments === null ? (
+                  <div>{String(commentError)}</div>
+                ) : (
+                  comments
+                    .filter(comm => comm.post === post.id)
+                    .map(comment => {
+                      return (
+                        <CommentDisplay
+                          key={comment.id}
+                          author={comment.author}
+                          date={comment.date}
+                          content={comment.content}
+                        ></CommentDisplay>
+                      );
+                    })
+                )}
+              </div>
+            );
+          })
+        )}
       </div>
     </main>
   );
