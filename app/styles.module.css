@@ -5,12 +5,179 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 342px;
+  height: 88px;
+  background: #fafafa;
+  display: flex; /* Makes it a flex container */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Left, center, and right sections spread out */ /* Or whatever height you prefer */
+  padding: 0 16px;
+  border-bottom: 1px solid #c4c4c4;
 }
 
 .content {
-  max-width: 350px;
+  width: 375px;
+  height: 812px;
   height: 100%;
   border: 1px solid black;
+  font-style: poppins;
+}
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.picName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.name {
+  /* display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; */
+  font-weight: 500;
+  margin-left: 5px;
+  font-size: 85%;
+  align-self: center;
+}
+
+.avatar {
+  width: 22px;
+  height: 22px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.date {
+  color: #888;
+  font-size: 11px;
+  align-self: last baseline;
+}
+
+.words {
+  margin: 15px;
+  font-size: 13px;
+}
+
+.pic {
+  margin-left: 14px;
+  margin-right: 15px;
+  width: 346px;
+  height: 231px;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.comments {
+  margin-left: 50px;
+  margin-right: 16px;
+  font-size: 13px;
+}
+
+.withLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin: 15px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.leftSection {
+  position: absolute;
+  display: flex;
+  left: 1px;
+  align-items: center;
+}
+.centerSection,
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+/* Style placeholders for icons/text as you wish */
+.backArrow {
+  margin-right: 8px; /* space from the left edge */
+  font-size: 18px; /* example sizing if using a character arrow */
+}
+
+.centerSection .logo {
+  width: 24px;
+  height: 24px; /* placeholder look for a logo */
+  margin: 0 auto;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.title {
+  color: #0078e8;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.07px;
+  margin-left: 5px;
+}
+
+.blog {
+  color: #262626;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.07px;
+  margin-left: 5px;
+}
+
+/* Right‐side icons spaced apart */
+.rightSection span {
+  width: 20px;
+  height: 20px;
+  margin-left: 1px;
+  align-items: flex-end;
+}
+
+.topLayer {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.bottomLayer {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+.time {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  color: #171717;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  left: 590px;
+  top: 12px;
 }
